@@ -11,6 +11,7 @@
 		2858CB8D282F7DE3008BF448 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2858CB8C282F7DE3008BF448 /* Constants.swift */; };
 		2858CB90282F7E30008BF448 /* String++Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2858CB8F282F7E30008BF448 /* String++Extensions.swift */; };
 		2858CB92282F99AB008BF448 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2858CB91282F99AB008BF448 /* WeatherListViewModel.swift */; };
+		2858CB94282FB97A008BF448 /* Double++Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2858CB93282FB97A008BF448 /* Double++Extensions.swift */; };
 		28879BD2282F632F0077CA33 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28879BD1282F632F0077CA33 /* Weather.swift */; };
 		28879BD4282F66C50077CA33 /* APIKEYS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28879BD3282F66C50077CA33 /* APIKEYS.plist */; };
 		28879BD6282F67020077CA33 /* WeatherAPPAPIKEY++Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28879BD5282F67020077CA33 /* WeatherAPPAPIKEY++Bundle.swift */; };
@@ -30,6 +31,7 @@
 		2858CB8C282F7DE3008BF448 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2858CB8F282F7E30008BF448 /* String++Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String++Extensions.swift"; sourceTree = "<group>"; };
 		2858CB91282F99AB008BF448 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
+		2858CB93282FB97A008BF448 /* Double++Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double++Extensions.swift"; sourceTree = "<group>"; };
 		28879BD1282F632F0077CA33 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		28879BD3282F66C50077CA33 /* APIKEYS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEYS.plist; sourceTree = "<group>"; };
 		28879BD5282F67020077CA33 /* WeatherAPPAPIKEY++Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherAPPAPIKEY++Bundle.swift"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				2858CB8F282F7E30008BF448 /* String++Extensions.swift */,
+				2858CB93282FB97A008BF448 /* Double++Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				28AAD9C6282BE1CB0053754F /* SceneDelegate.swift in Sources */,
 				2858CB90282F7E30008BF448 /* String++Extensions.swift in Sources */,
 				2858CB92282F99AB008BF448 /* WeatherListViewModel.swift in Sources */,
+				2858CB94282FB97A008BF448 /* Double++Extensions.swift in Sources */,
 				2858CB8D282F7DE3008BF448 /* Constants.swift in Sources */,
 				28879BD2282F632F0077CA33 /* Weather.swift in Sources */,
 			);

@@ -8,8 +8,20 @@
 import Foundation
 
 class WeatherListViewModel {
-
-//    let weatherListViewModel:
+    
+    private var weatherViewModels = [WeatherViewModel]()
+    
+    func addWeatherViewModel(_ viewModel: WeatherViewModel) {
+        weatherViewModels.append(viewModel)
+    }
+    
+    func numberOfRows(_ sectionP: Int) -> Int {
+        return weatherViewModels.count
+    }
+    
+    func modelAt(_ index: Int) -> WeatherViewModel {
+        return weatherViewModels[index]
+    }
 
 }
 

@@ -15,4 +15,17 @@ class WeatherCell: UITableViewCell {
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     
+//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+//        super.init(style: style, reuseIdentifier: reuseIdentifier)
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
+    func configure(_ viewModel: WeatherViewModel) {
+        self.cityNameLabel.text = viewModel.city
+        self.temperatureLabel.text = "\(viewModel.temperature.formatAsDegree())"
+    }
+    
 }
