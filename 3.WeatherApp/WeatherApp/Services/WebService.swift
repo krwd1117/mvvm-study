@@ -13,12 +13,8 @@ struct Resource<T> {
 }
 
 class WebService {
-    
     func load<T>(resource: Resource<T>, completion: @escaping (T?) -> ()) {
         URLSession.shared.dataTask(with: resource.url) { data, response, error in
-            
-            print("data >>>>> ", data)
-            
             if let data = data {
                 DispatchQueue.main.async {
                     completion(resource.parse(data))
@@ -26,9 +22,6 @@ class WebService {
             } else {
                 completion(nil)
             }
-            
-            
         }.resume()
     }
-    
 }
