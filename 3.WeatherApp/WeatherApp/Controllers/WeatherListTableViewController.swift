@@ -13,18 +13,6 @@ class WeatherListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let appid = Bundle.main.apiKey
-        
-        let resource = Resource<WeatherResponse>(url: URL(string: "https://api.openweathermap.org/data/2.5/weather?q=houston&appid=\(appid)&units=imperial")!) { data in
-            return try? JSONDecoder().decode(WeatherResponse.self, from: data)
-        }
-        
-        WebService().load(resource: resource) { weatherResponse in
-            if let weatherResponse = weatherResponse {
-                print(weatherResponse)
-            }
-        }
     }
 }
 
@@ -53,4 +41,30 @@ extension WeatherListTableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddWeatherCityViewController" {
+            prepareSqgueForAddWeatherCityViewController(segue: segue)
+        }
+    }
+    
+    func prepareSqgueForAddWeatherCityViewController(segue: UIStoryboardSegue) {
+        
+        guard let nav = segue.destination as? UINavigationController else {
+            fatalError("NavigationController not found")
+        }
+        
+        guard let addWeatherCityViewController = nav.viewControllers.first as? AddWeatherCityViewController else {
+            fatalError("AddWeatherCityController not found")
+        }
+        
+        addWeatherCityViewController.delegate = self
+        
+    }
+    
+}
+
+extension WeatherListTableViewController: AddWeatherDelegate {
+    func addWeatherDidSave(viewModel: WeatherViewModel) {
+        print("viewModel -> ", viewModel)
+    }
 }

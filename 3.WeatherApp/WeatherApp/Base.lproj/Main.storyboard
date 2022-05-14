@@ -59,7 +59,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Setting" id="MHL-SV-c3C"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DTz-Cj-ulk">
                             <connections>
-                                <segue destination="gjU-7a-Pa3" kind="presentation" id="wDj-vy-xwR"/>
+                                <segue destination="gjU-7a-Pa3" kind="presentation" identifier="AddWeatherCityViewController" id="wDj-vy-xwR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

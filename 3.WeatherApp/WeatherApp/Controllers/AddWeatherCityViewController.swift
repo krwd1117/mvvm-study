@@ -8,11 +8,19 @@
 import Foundation
 import UIKit
 
+protocol AddWeatherDelegate {
+    func addWeatherDidSave(viewModel: WeatherViewModel)
+}
+
 class AddWeatherCityViewController: UIViewController {
 
     // MARK: - Properties
     
     @IBOutlet weak var cityNameTextField: UITextField!
+    
+    private var addWeatherViewModel = AddWeatherViewModel()
+    
+    var delegate: AddWeatherDelegate?
     
     // MARK: - LifeCycle
     
@@ -25,15 +33,10 @@ class AddWeatherCityViewController: UIViewController {
     @IBAction func saveCityButtonTapped() {
         
         if let city = cityNameTextField.text {
-            guard let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=07c19f8b04264f1bf6aeb840a5f8e47d&units=imperial") else { return }
-            
-            // Resource<T>는 데이터가 반환될때 받을 모델
-            let weatherResource = Resource<Any>(url: weatherURL) { data in
-                return data
-            }
-            
-            WebService().load(resource: weatherResource) { result in
-//                 return result
+         
+            addWeatherViewModel.addWeather(for: city) { weatherViewModel in
+                self.delegate?.addWeatherDidSave(viewModel: weatherViewModel)
+                self.dismiss(animated: true)
             }
             
         }
