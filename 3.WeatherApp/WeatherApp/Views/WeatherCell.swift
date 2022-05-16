@@ -17,6 +17,7 @@ class WeatherCell: UITableViewCell {
     
 //    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 //        super.init(style: style, reuseIdentifier: reuseIdentifier)
+//        configureSkeleton()
 //    }
 //
 //    required init?(coder: NSCoder) {
@@ -26,6 +27,5 @@ class WeatherCell: UITableViewCell {
     func configure(_ viewModel: WeatherViewModel) {
         self.cityNameLabel.text = viewModel.city
         self.temperatureLabel.text = "\(viewModel.temperature.formatAsDegree())"
-    }
-    
+    }    
 }

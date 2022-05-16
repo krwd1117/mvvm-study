@@ -10,11 +10,15 @@ import UIKit
 
 class WeatherListTableViewController: UITableViewController {
     
-    let weatherListViewModel = WeatherListViewModel()
+    private var weatherListViewModel = WeatherListViewModel()
+    private var lastUnitSelection: Unit!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
+        if let value = UserDefaults.standard.value(forKey: "unit") as? String {
+            self.lastUnitSelection = Unit(rawValue: value)!
+        }
     }
 }
 
@@ -36,18 +40,25 @@ extension WeatherListTableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as? WeatherCell else {
             return UITableViewCell()
         }
-        
         let weatherViewModel = weatherListViewModel.modelAt(indexPath.row)
-        
         cell.configure(weatherViewModel)
-        
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "AddWeatherCityViewController" {
             prepareSqgueForAddWeatherCityViewController(segue: segue)
         }
+        
+        
+        
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "SettingsTableViewController") as? SettingsTableViewController else {
+            return print("오류")
+        }
+
+        vc.delegate = self
+        
     }
     
     func prepareSqgueForAddWeatherCityViewController(segue: UIStoryboardSegue) {
@@ -59,9 +70,7 @@ extension WeatherListTableViewController {
         guard let addWeatherCityViewController = nav.viewControllers.first as? AddWeatherCityViewController else {
             fatalError("AddWeatherCityController not found")
         }
-        
         addWeatherCityViewController.delegate = self
-        
     }
     
 }
@@ -70,5 +79,15 @@ extension WeatherListTableViewController: AddWeatherDelegate {
     func addWeatherDidSave(viewModel: WeatherViewModel) {
         weatherListViewModel.addWeatherViewModel(viewModel)
         self.tableView.reloadData()
+    }
+}
+
+extension WeatherListTableViewController: SettingsDelegate {
+    func settingsDone(viewModel: SettingsViewModel) {
+        if lastUnitSelection.rawValue != viewModel.selectedUnit.rawValue {
+            weatherListViewModel.updateUnit(to: viewModel.selectedUnit)
+            tableView.reloadData()
+            lastUnitSelection = Unit(rawValue: viewModel.selectedUnit.rawValue)
+        }
     }
 }

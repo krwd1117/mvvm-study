@@ -12,6 +12,8 @@
 		2858CB90282F7E30008BF448 /* String++Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2858CB8F282F7E30008BF448 /* String++Extensions.swift */; };
 		2858CB92282F99AB008BF448 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2858CB91282F99AB008BF448 /* WeatherListViewModel.swift */; };
 		2858CB94282FB97A008BF448 /* Double++Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2858CB93282FB97A008BF448 /* Double++Extensions.swift */; };
+		2858CB96282FCC93008BF448 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2858CB95282FCC93008BF448 /* SettingsTableViewController.swift */; };
+		2858CB98282FCFE8008BF448 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2858CB97282FCFE8008BF448 /* SettingsViewModel.swift */; };
 		28879BD2282F632F0077CA33 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28879BD1282F632F0077CA33 /* Weather.swift */; };
 		28879BD4282F66C50077CA33 /* APIKEYS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28879BD3282F66C50077CA33 /* APIKEYS.plist */; };
 		28879BD6282F67020077CA33 /* WeatherAPPAPIKEY++Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28879BD5282F67020077CA33 /* WeatherAPPAPIKEY++Bundle.swift */; };
@@ -24,6 +26,7 @@
 		28AAD9DB282BEDF30053754F /* AddWeatherCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AAD9DA282BEDF30053754F /* AddWeatherCityViewController.swift */; };
 		28AAD9DF282BF8470053754F /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AAD9DE282BF8470053754F /* WeatherCell.swift */; };
 		28AAD9E2282C03CB0053754F /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AAD9E1282C03CB0053754F /* WebService.swift */; };
+		28D39F432830C37700337C86 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 28D39F422830C37700337C86 /* SkeletonView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,8 @@
 		2858CB8F282F7E30008BF448 /* String++Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String++Extensions.swift"; sourceTree = "<group>"; };
 		2858CB91282F99AB008BF448 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
 		2858CB93282FB97A008BF448 /* Double++Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double++Extensions.swift"; sourceTree = "<group>"; };
+		2858CB95282FCC93008BF448 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		2858CB97282FCFE8008BF448 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		28879BD1282F632F0077CA33 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		28879BD3282F66C50077CA33 /* APIKEYS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEYS.plist; sourceTree = "<group>"; };
 		28879BD5282F67020077CA33 /* WeatherAPPAPIKEY++Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherAPPAPIKEY++Bundle.swift"; sourceTree = "<group>"; };
@@ -53,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D39F432830C37700337C86 /* SkeletonView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +70,7 @@
 			children = (
 				2858CB89282F7CBF008BF448 /* AddWeatherViewModel.swift */,
 				2858CB91282F99AB008BF448 /* WeatherListViewModel.swift */,
+				2858CB97282FCFE8008BF448 /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -136,6 +143,7 @@
 			children = (
 				28AAD9D8282BED970053754F /* WeatherListTableViewController.swift */,
 				28AAD9DA282BEDF30053754F /* AddWeatherCityViewController.swift */,
+				2858CB95282FCC93008BF448 /* SettingsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -172,6 +180,9 @@
 			dependencies = (
 			);
 			name = WeatherApp;
+			packageProductDependencies = (
+				28D39F422830C37700337C86 /* SkeletonView */,
+			);
 			productName = WeatherApp;
 			productReference = 28AAD9C0282BE1CB0053754F /* WeatherApp.app */;
 			productType = "com.apple.product-type.application";
@@ -200,6 +211,9 @@
 				Base,
 			);
 			mainGroup = 28AAD9B7282BE1CB0053754F;
+			packageReferences = (
+				28D39F412830C37700337C86 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+			);
 			productRefGroup = 28AAD9C1282BE1CB0053754F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +247,9 @@
 				28AAD9D9282BED970053754F /* WeatherListTableViewController.swift in Sources */,
 				28AAD9C4282BE1CB0053754F /* AppDelegate.swift in Sources */,
 				28AAD9DF282BF8470053754F /* WeatherCell.swift in Sources */,
+				2858CB98282FCFE8008BF448 /* SettingsViewModel.swift in Sources */,
 				28AAD9DB282BEDF30053754F /* AddWeatherCityViewController.swift in Sources */,
+				2858CB96282FCC93008BF448 /* SettingsTableViewController.swift in Sources */,
 				28879BD6282F67020077CA33 /* WeatherAPPAPIKEY++Bundle.swift in Sources */,
 				28AAD9C6282BE1CB0053754F /* SceneDelegate.swift in Sources */,
 				2858CB90282F7E30008BF448 /* String++Extensions.swift in Sources */,
@@ -458,6 +474,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		28D39F412830C37700337C86 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		28D39F422830C37700337C86 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 28D39F412830C37700337C86 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 28AAD9B8282BE1CB0053754F /* Project object */;
 }
