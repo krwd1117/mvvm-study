@@ -51,8 +51,6 @@ extension WeatherListTableViewController {
             prepareSqgueForAddWeatherCityViewController(segue: segue)
         }
         
-        
-        
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "SettingsTableViewController") as? SettingsTableViewController else {
             return print("오류")
         }
